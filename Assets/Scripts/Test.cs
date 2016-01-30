@@ -12,7 +12,7 @@ public class Test : MonoBehaviour {
 	void Update () {
         if (Input.GetAxis("Horizontal") > 0)
         {
-            transform.Rotate(new Vector3(0,0,30*Time.deltaTime*direction));
+            transform.Rotate(Vector3.forward,Time.deltaTime*30*direction);
         }
 	}
 }
