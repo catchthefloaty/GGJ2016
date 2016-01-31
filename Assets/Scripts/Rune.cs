@@ -15,11 +15,11 @@ public class Rune : MonoBehaviour {
 
 
     public bool affectAfter = false;
-    public int affectDirection = 1;
-    public float affectMagnitude = 5;
+    public int afterDirection = 1;
+    public float afterMagnitude = 5;
 
 
-    int ringnumber;
+    public int ringnumber;
 
     public GameObject before;
     public GameObject after;
@@ -33,11 +33,11 @@ public class Rune : MonoBehaviour {
 
         if (ringnumber > 1)
         {
-            before = game.rings[ringnumber -1];
+            before = game.rings[ringnumber -2];
         }
         if(ringnumber < 4)
         {
-            after = game.rings[ringnumber + 1];
+            after = game.rings[ringnumber];
         }
         
 
@@ -63,14 +63,24 @@ public class Rune : MonoBehaviour {
         Debug.Log("DTap");
         if (affectBefore)
         {
-            before.GetComponent<Ring>().
+            if (before != null)
+            {
+                before.GetComponent<Ring>().rotationToGo += beforeDirection * beforemagnitude;
+                //before.GetComponent<Ring>().start = before.transform.eulerAngles;
+            }
         }
         if (affectSame)
         {
-
+            transform.parent.gameObject.GetComponent<Ring>().rotationToGo += sameDirection * sameMagnitude;
+            //transform.parent.gameObject.GetComponent<Ring>().start = transform.parent.gameObject.transform.eulerAngles;
         }
-        if (affectAfter) {
-
+        if (affectAfter)
+        {
+            if (after != null)
+            {
+                after.GetComponent<Ring>().rotationToGo += afterDirection * afterMagnitude;
+                // after.GetComponent<Ring>().start = after.transform.eulerAngles;
+            }
         }
 
     }

@@ -10,7 +10,9 @@ public class Game : MonoBehaviour {
 
     public List<GameObject> rings = new List<GameObject>();
     // Use this for initialization
-    void Start () {
+
+
+    void Awake() {
         rings.Add(Ring1);
         rings.Add(Ring2);
         rings.Add(Ring3);
