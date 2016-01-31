@@ -300,7 +300,7 @@ public class Game : MonoBehaviour
         }
         else if (gameState == 4)
         {
-            if (Ring1.transform.rotation.eulerAngles.z == ringlock1 || (Ring1.transform.rotation.eulerAngles.z + Ring1.GetComponent<Ring>().rotationToGo) == ringlock1)
+            if ((int)Ring1.transform.rotation.eulerAngles.z == ringlock1 || (int)(Ring1.transform.rotation.eulerAngles.z + Ring1.GetComponent<Ring>().rotationToGo) == ringlock1)
             {
                 gameState = 5;
             }
@@ -318,7 +318,7 @@ public class Game : MonoBehaviour
 
     void lockCheck()
     {
-        if (!(Ring4.transform.rotation.eulerAngles.z == ringlock4))
+        if (!((int)Ring4.transform.rotation.eulerAngles.z == ringlock4))
         {
             gameState = 1;
         }
@@ -327,11 +327,11 @@ public class Game : MonoBehaviour
             
             gameState = 2;
         }
-       else if (!(Ring2.transform.rotation.eulerAngles.z == ringlock2))
+       else if (!((int)Ring2.transform.rotation.eulerAngles.z == ringlock2))
         {
             gameState = 3;
         }
-        else if (!(Ring1.transform.rotation.eulerAngles.z == ringlock1))
+        else if (!((int)Ring1.transform.rotation.eulerAngles.z == ringlock1))
         {
             gameState = 4;
         } 
