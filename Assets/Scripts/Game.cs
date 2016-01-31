@@ -180,7 +180,7 @@ public class Game : MonoBehaviour
                             rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
                             if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
                             {
-                                if (locks[i] == rings[i].transform.rotation.eulerAngles.z)
+                                if (locks[i] == (int)rings[i].transform.rotation.eulerAngles.z)
                                 {
                                     rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
                                 }
@@ -219,7 +219,7 @@ public class Game : MonoBehaviour
                             rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
                             if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
                             {
-                                if (locks[i] == rings[i].transform.rotation.eulerAngles.z)
+                                if (locks[i] == (int)rings[i].transform.rotation.eulerAngles.z)
                                 {
                                     rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
                                 }
@@ -272,7 +272,7 @@ public class Game : MonoBehaviour
         else if (gameState == 1)
         {
 
-            if (Ring4.transform.rotation.eulerAngles.z == ringlock4 || (Ring4.transform.rotation.eulerAngles.z + Ring4.GetComponent<Ring>().rotationToGo) == ringlock4)
+            if ((int)Ring4.transform.rotation.eulerAngles.z == ringlock4 || (int)(Ring4.transform.rotation.eulerAngles.z + Ring4.GetComponent<Ring>().rotationToGo) == ringlock4)
             {
                 gameState = 2;
             }
@@ -281,15 +281,18 @@ public class Game : MonoBehaviour
         }
         else if (gameState == 2)
         {
-            if (Ring3.transform.rotation.eulerAngles.z == ringlock3 || (Ring3.transform.rotation.eulerAngles.z + Ring3.GetComponent<Ring>().rotationToGo) == ringlock3)
+            ///Debug.Log((int)Ring3.transform.rotation.eulerAngles.z == (int)ringlock3 || (Ring3.transform.rotation.eulerAngles.z + Ring3.GetComponent<Ring>().rotationToGo) == ringlock3);// || (Ring3.transform.rotation.eulerAngles.z + Ring3.GetComponent<Ring>().rotationToGo) == ringlock3);
+            if ((int)Ring3.transform.rotation.eulerAngles.z == ringlock3 || (int)(Ring3.transform.rotation.eulerAngles.z + Ring3.GetComponent<Ring>().rotationToGo) == ringlock3)
             {
+
                 gameState = 3;
             }
             lockCheck();
+            
         }
         else if (gameState == 3)
         {
-            if (Ring2.transform.rotation.eulerAngles.z == ringlock2 || (Ring2.transform.rotation.eulerAngles.z + Ring2.GetComponent<Ring>().rotationToGo) == ringlock2)
+            if ((int)Ring2.transform.rotation.eulerAngles.z == (int)ringlock2 || (int)(Ring2.transform.rotation.eulerAngles.z + Ring2.GetComponent<Ring>().rotationToGo) == ringlock2)
             {
                 gameState = 4;
             }
@@ -315,22 +318,26 @@ public class Game : MonoBehaviour
 
     void lockCheck()
     {
-        if (!(Ring1.transform.rotation.eulerAngles.z == ringlock1))
-        {
-            gameState = 4;
-        }
-        if (!(Ring2.transform.rotation.eulerAngles.z == ringlock2))
-        {
-            gameState = 3;
-        }
-        if (!(Ring3.transform.rotation.eulerAngles.z == ringlock3))
-        {
-            gameState = 2;
-        }
         if (!(Ring4.transform.rotation.eulerAngles.z == ringlock4))
         {
             gameState = 1;
         }
+        else if (!((int)Ring3.transform.rotation.eulerAngles.z == (int)ringlock3))
+        {
+            
+            gameState = 2;
+        }
+       else if (!(Ring2.transform.rotation.eulerAngles.z == ringlock2))
+        {
+            gameState = 3;
+        }
+        else if (!(Ring1.transform.rotation.eulerAngles.z == ringlock1))
+        {
+            gameState = 4;
+        } 
+
+
+
 
     }
 
