@@ -52,10 +52,10 @@ public class Game : MonoBehaviour
         {
             if (gameState == 0)
             {
-                Ring1.GetComponent<Ring>().rotationToGo -= Ring1.transform.rotation.eulerAngles.z;
-                Ring2.GetComponent<Ring>().rotationToGo -= Ring2.transform.rotation.eulerAngles.z;
-                Ring3.GetComponent<Ring>().rotationToGo -= Ring3.transform.rotation.eulerAngles.z;
-                Ring4.GetComponent<Ring>().rotationToGo -= Ring4.transform.rotation.eulerAngles.z;
+                Ring1.GetComponent<Ring>().rotationToGo = -Ring1.transform.rotation.eulerAngles.z;
+                Ring2.GetComponent<Ring>().rotationToGo = -Ring2.transform.rotation.eulerAngles.z;
+                Ring3.GetComponent<Ring>().rotationToGo = -Ring3.transform.rotation.eulerAngles.z;
+                Ring4.GetComponent<Ring>().rotationToGo = -Ring4.transform.rotation.eulerAngles.z;
                 for (int i = 0; i < rings.Count; i++)
                 {
                     for (int k = 0; k < rings[i].transform.childCount; k++)
