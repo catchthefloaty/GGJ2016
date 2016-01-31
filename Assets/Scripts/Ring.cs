@@ -32,7 +32,10 @@ public class Ring : MonoBehaviour {
                     float roundoff = 0; 
                     if (transform.tag == "ring2")
                     {
-                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z,2, MidpointRounding.AwayFromZero)+.5f ;
+
+
+                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z*2,2, MidpointRounding.ToEven)/2+.5f ;
+                        Debug.Log(roundoff);
                     }
                     else {
                         roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
@@ -54,7 +57,7 @@ public class Ring : MonoBehaviour {
                     float roundoff = 0;
                     if (transform.tag == "ring2")
                     {
-                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z,2, MidpointRounding.AwayFromZero) +.5f;
+                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z*2,2, MidpointRounding.ToEven)/2 -.5f;
                     }
                     else {
                         roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
