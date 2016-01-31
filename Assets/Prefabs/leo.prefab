@@ -81,7 +81,8 @@ MonoBehaviour:
   affectBefore: 1
   beforeDirection: -1
   beforemagnitude: 1
-  affectSame: 1
+  winRune: 0
+  affectSame: 0
   sameDirection: 1
   sameMagnitude: 1
   affectAfter: 1
@@ -155,6 +156,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: afterMagnitude
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: affectSame
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

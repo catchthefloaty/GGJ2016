@@ -28,6 +28,7 @@ public class Game : MonoBehaviour
     private List<float> locks = new List<float>();
 
     public List<GameObject> rings = new List<GameObject>();
+    
     // Use this for initialization
     private float curTime;
 
@@ -199,6 +200,8 @@ public class Game : MonoBehaviour
             }
             else if (gameState == 4)
             {
+                curTime = 0;
+                transform.GetChild(0).gameObject.SetActive(false);
                 for (int k = 0; k < rings[0].transform.childCount; k++)
                 {
                     rings[0].transform.GetChild(k).GetComponent<TapGesture>().enabled = true;
@@ -256,6 +259,7 @@ public class Game : MonoBehaviour
                         }
                     }
                 }
+                lockCheck();
             }
         }
         prevState = gameState;
@@ -319,6 +323,7 @@ public class Game : MonoBehaviour
         }
         else if (gameState == 5)
         {
+            lockCheck();
             curTime += Time.deltaTime;
             if(curTime > 6)
             {

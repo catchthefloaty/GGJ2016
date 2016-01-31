@@ -80,11 +80,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affectBefore: 1
   beforeDirection: -1
-  beforemagnitude: 1
+  beforemagnitude: 3
+  winRune: 0
   affectSame: 1
   sameDirection: 1
-  sameMagnitude: 1
-  affectAfter: 1
+  sameMagnitude: 8
+  affectAfter: 0
   afterDirection: 1
   afterMagnitude: 1
   ringnumber: 0
@@ -134,11 +135,11 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: sameMagnitude
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: beforemagnitude
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -155,6 +156,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: afterMagnitude
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: affectAfter
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

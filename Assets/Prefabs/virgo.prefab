@@ -81,12 +81,13 @@ MonoBehaviour:
   affectBefore: 1
   beforeDirection: -1
   beforemagnitude: 1
+  winRune: 0
   affectSame: 1
   sameDirection: 1
-  sameMagnitude: 1
+  sameMagnitude: 2
   affectAfter: 1
-  afterDirection: 1
-  afterMagnitude: 1
+  afterDirection: -1
+  afterMagnitude: 3
   ringnumber: 0
   before: {fileID: 0}
   after: {fileID: 0}
@@ -134,7 +135,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: sameMagnitude
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: beforemagnitude
@@ -154,7 +155,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: afterMagnitude
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: affectAfter
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: afterDirection
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
