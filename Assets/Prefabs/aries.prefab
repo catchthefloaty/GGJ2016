@@ -82,8 +82,8 @@ MonoBehaviour:
   beforeDirection: 0
   beforemagnitude: 0
   affectSame: 1
-  sameDirection: 1
-  sameMagnitude: 90
+  sameDirection: -1
+  sameMagnitude: 1
   affectAfter: 0
   afterDirection: 1
   afterMagnitude: 0
@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 699f26a02c4c39e439de640d21eeb8ef, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.625, g: 0.625, b: 0.625, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
@@ -137,7 +137,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: sameMagnitude
-      value: 90
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: afterMagnitude
@@ -150,6 +150,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: affectBefore
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sameDirection
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: 0.625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
