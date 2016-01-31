@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TouchScript.Gestures;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class Game : MonoBehaviour
 
     public List<GameObject> rings = new List<GameObject>();
     // Use this for initialization
-
+    private float curTime;
 
     void Awake()
     {
@@ -237,6 +238,7 @@ public class Game : MonoBehaviour
             }
             else if (gameState == 5)
             {
+                transform.GetChild(0).gameObject.SetActive(true);
                 for (int i = 0; i < rings.Count; i++)
                 {
                     for (int k = 0; k < rings[i].transform.childCount; k++)
@@ -317,6 +319,12 @@ public class Game : MonoBehaviour
         }
         else if (gameState == 5)
         {
+            curTime += Time.deltaTime;
+            if(curTime > 10)
+            {
+               SceneManager.LoadScene("end");
+
+            }
 
         }
 
