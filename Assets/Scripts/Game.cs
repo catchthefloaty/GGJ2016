@@ -320,7 +320,7 @@ public class Game : MonoBehaviour
         else if (gameState == 5)
         {
             curTime += Time.deltaTime;
-            if(curTime > 10)
+            if(curTime > 6)
             {
                SceneManager.LoadScene("end");
 
