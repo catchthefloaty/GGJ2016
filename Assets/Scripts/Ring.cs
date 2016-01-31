@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Ring : MonoBehaviour {
     public float rotationToGo;
@@ -28,7 +29,14 @@ public class Ring : MonoBehaviour {
                 else
                 {
                     transform.Rotate(0, 0, rotationToGo);
-                    int roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
+                    float roundoff = 0; 
+                    if (transform.tag == "ring2")
+                    {
+                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z,2, MidpointRounding.AwayFromZero)+.5f ;
+                    }
+                    else {
+                        roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
+                    }
                     transform.rotation = Quaternion.Euler(0,0,roundoff);
                 }
                 
@@ -43,7 +51,14 @@ public class Ring : MonoBehaviour {
                 else
                 {
                     transform.Rotate(0, 0, rotationToGo);
-                    int roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
+                    float roundoff = 0;
+                    if (transform.tag == "ring2")
+                    {
+                        roundoff = (float)Math.Round((decimal)transform.rotation.eulerAngles.z,2, MidpointRounding.AwayFromZero) +.5f;
+                    }
+                    else {
+                        roundoff = Mathf.RoundToInt(transform.rotation.eulerAngles.z);
+                    }
                     transform.rotation = Quaternion.Euler(0, 0, roundoff);
                 }
             }
