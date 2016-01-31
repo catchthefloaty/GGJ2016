@@ -83,10 +83,10 @@ MonoBehaviour:
   beforemagnitude: 1
   winRune: 0
   affectSame: 1
-  sameDirection: 1
-  sameMagnitude: 1
+  sameDirection: -1
+  sameMagnitude: -1
   affectAfter: 0
-  afterDirection: 1
+  afterDirection: 0
   afterMagnitude: 1
   ringnumber: 0
   before: {fileID: 0}
@@ -135,7 +135,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: sameMagnitude
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -158,12 +158,20 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: affectBefore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: affectAfter
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: affectBefore
+      propertyPath: afterDirection
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sameDirection
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
