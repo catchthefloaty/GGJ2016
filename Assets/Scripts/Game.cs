@@ -219,7 +219,7 @@ public class Game : MonoBehaviour
                             rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
                             if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
                             {
-                                if (locks[i] == (int)rings[i].transform.rotation.eulerAngles.z)
+                                if ((int)locks[i] == (int)rings[i].transform.rotation.eulerAngles.z)
                                 {
                                     rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
                                 }
@@ -242,7 +242,16 @@ public class Game : MonoBehaviour
                     for (int k = 0; k < rings[i].transform.childCount; k++)
                     {
                         rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
+                        if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
+                        {
 
+                            rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
+                        }
+                    
+                        else
+                        {
+                            rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = off;
+                        }
                     }
                 }
             }
@@ -331,7 +340,7 @@ public class Game : MonoBehaviour
         {
             gameState = 3;
         }
-        else if (!((int)Ring1.transform.rotation.eulerAngles.z == ringlock1))
+        else if (!((int)Ring1.transform.rotation.eulerAngles.z == (int)ringlock1))
         {
             gameState = 4;
         } 
