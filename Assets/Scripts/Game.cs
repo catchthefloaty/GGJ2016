@@ -52,6 +52,8 @@ public class Game : MonoBehaviour
         {
             if (gameState == 0)
             {
+                curTime = 0;
+                transform.GetChild(0).gameObject.SetActive(false);
                 Ring1.GetComponent<Ring>().rotationToGo = -Ring1.transform.rotation.eulerAngles.z;
                 Ring2.GetComponent<Ring>().rotationToGo = -Ring2.transform.rotation.eulerAngles.z;
                 Ring3.GetComponent<Ring>().rotationToGo = -Ring3.transform.rotation.eulerAngles.z;
@@ -241,25 +243,31 @@ public class Game : MonoBehaviour
             }
             else if (gameState == 5)
             {
-                transform.GetChild(0).gameObject.SetActive(true);
-                for (int i = 0; i < rings.Count; i++)
+                if (lockCheck())
                 {
-                    for (int k = 0; k < rings[i].transform.childCount; k++)
-                    {
-                        rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
-                        if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
-                        {
 
-                            rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
-                        }
-                    
-                        else
+                }
+                else {
+                    transform.GetChild(0).gameObject.SetActive(true);
+                    for (int i = 0; i < rings.Count; i++)
+                    {
+                        for (int k = 0; k < rings[i].transform.childCount; k++)
                         {
-                            rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = off;
+                            rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
+                            if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
+                            {
+
+                                rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
+                            }
+
+                            else
+                            {
+                                rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = off;
+                            }
                         }
                     }
                 }
-                lockCheck();
+                
             }
         }
         prevState = gameState;
@@ -338,26 +346,31 @@ public class Game : MonoBehaviour
     }
 
 
-    void lockCheck()
+    bool lockCheck()
     {
+        bool test = false; 
         if (!((int)Ring4.transform.rotation.eulerAngles.z == ringlock4))
         {
             gameState = 1;
+            test = true;
         }
         else if (!((int)Ring3.transform.rotation.eulerAngles.z == (int)ringlock3))
         {
             
             gameState = 2;
+            test = true;
         }
        else if (!((int)Ring2.transform.rotation.eulerAngles.z == ringlock2))
         {
             gameState = 3;
+            test = true;
         }
         else if (!((int)Ring1.transform.rotation.eulerAngles.z == (int)ringlock1))
         {
             gameState = 4;
-        } 
-
+            test = true;
+        }
+        return test;
 
 
 
