@@ -65,20 +65,20 @@ public class Rune : MonoBehaviour {
         {
             if (before != null)
             {
-                before.GetComponent<Ring>().rotationToGo += beforeDirection * beforemagnitude;
+                before.GetComponent<Ring>().rotationToGo += beforeDirection * (360/(before.transform.childCount)) * beforemagnitude;
                 //before.GetComponent<Ring>().start = before.transform.eulerAngles;
             }
         }
         if (affectSame)
         {
-            transform.parent.gameObject.GetComponent<Ring>().rotationToGo += sameDirection * sameMagnitude;
+            transform.parent.gameObject.GetComponent<Ring>().rotationToGo += sameDirection * (360 / (transform.parent.transform.childCount)) * sameMagnitude;
             //transform.parent.gameObject.GetComponent<Ring>().start = transform.parent.gameObject.transform.eulerAngles;
         }
         if (affectAfter)
         {
             if (after != null)
             {
-                after.GetComponent<Ring>().rotationToGo += afterDirection * afterMagnitude;
+                after.GetComponent<Ring>().rotationToGo += afterDirection * (360 / (after.transform.childCount)) * afterMagnitude;
                 // after.GetComponent<Ring>().start = after.transform.eulerAngles;
             }
         }
