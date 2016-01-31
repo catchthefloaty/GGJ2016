@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TouchScript.Gestures;
 
-public class Game : MonoBehaviour {
+public class Game : MonoBehaviour
+{
     public bool disableRings = false;
     public Color off;
     public Color green;
@@ -29,23 +30,26 @@ public class Game : MonoBehaviour {
     // Use this for initialization
 
 
-    void Awake() {
+    void Awake()
+    {
         rings.Add(Ring1);
         rings.Add(Ring2);
         rings.Add(Ring3);
         rings.Add(Ring4);
-locks.Add(ringlock1);
-         locks.Add(ringlock2);
+        locks.Add(ringlock1);
+        locks.Add(ringlock2);
         locks.Add(ringlock3);
-       
+
         locks.Add(ringlock4);
     }
-	
-	// Update is called once per frame
-	void Update () {
-	if(prevState != gameState)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (prevState != gameState)
         {
-            if (gameState == 0) {
+            if (gameState == 0)
+            {
                 Ring1.GetComponent<Ring>().rotationToGo -= Ring1.transform.rotation.eulerAngles.z;
                 Ring2.GetComponent<Ring>().rotationToGo -= Ring2.transform.rotation.eulerAngles.z;
                 Ring3.GetComponent<Ring>().rotationToGo -= Ring3.transform.rotation.eulerAngles.z;
@@ -55,7 +59,8 @@ locks.Add(ringlock1);
                     for (int k = 0; k < rings[i].transform.childCount; k++)
                     {
                         rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
-                        if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune) {
+                        if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
+                        {
                             rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = red;
                         }
                         else
@@ -89,13 +94,15 @@ locks.Add(ringlock1);
                 }
                 for (int i = 0; i < rings.Count; i++)
                 {
-                    if (i != 3) {
+                    if (i != 3)
+                    {
                         for (int k = 0; k < rings[i].transform.childCount; k++)
                         {
                             rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
                             if (rings[i].transform.GetChild(k).GetComponent<Rune>().winRune)
                             {
-                                if (locks[i] == rings[i].transform.rotation.eulerAngles.z) {
+                                if (locks[i] == rings[i].transform.rotation.eulerAngles.z)
+                                {
                                     rings[i].transform.GetChild(k).GetComponent<SpriteRenderer>().color = green;
                                 }
                                 else {
@@ -243,7 +250,7 @@ locks.Add(ringlock1);
         prevState = gameState;
         if (gameState == 0)
         {
-            if(Ring1.transform.rotation.eulerAngles.z == 0)
+            if (Ring1.transform.rotation.eulerAngles.z == 0)
             {
                 if (Ring2.transform.rotation.eulerAngles.z == 0)
                 {
@@ -253,7 +260,7 @@ locks.Add(ringlock1);
                         {
                             gameState = 1;
                         }
-                        
+
                     }
                 }
             }
@@ -264,12 +271,13 @@ locks.Add(ringlock1);
         }
         else if (gameState == 1)
         {
-            
+
             if (Ring4.transform.rotation.eulerAngles.z == ringlock4 || (Ring4.transform.rotation.eulerAngles.z + Ring4.GetComponent<Ring>().rotationToGo) == ringlock4)
             {
                 gameState = 2;
             }
-            
+            lockCheck();
+
         }
         else if (gameState == 2)
         {
@@ -277,6 +285,7 @@ locks.Add(ringlock1);
             {
                 gameState = 3;
             }
+            lockCheck();
         }
         else if (gameState == 3)
         {
@@ -284,6 +293,7 @@ locks.Add(ringlock1);
             {
                 gameState = 4;
             }
+            lockCheck();
         }
         else if (gameState == 4)
         {
@@ -291,13 +301,38 @@ locks.Add(ringlock1);
             {
                 gameState = 5;
             }
+            lockCheck();
         }
         else if (gameState == 5)
         {
-            
+
         }
 
 
 
     }
+
+
+    void lockCheck()
+    {
+        if (!(Ring1.transform.rotation.eulerAngles.z == ringlock1))
+        {
+            gameState = 4;
+        }
+        if (!(Ring2.transform.rotation.eulerAngles.z == ringlock2))
+        {
+            gameState = 3;
+        }
+        if (!(Ring3.transform.rotation.eulerAngles.z == ringlock3))
+        {
+            gameState = 2;
+        }
+        if (!(Ring4.transform.rotation.eulerAngles.z == ringlock4))
+        {
+            gameState = 1;
+        }
+
+    }
+
+
 }
