@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11460744}
   - 65: {fileID: 6555492}
   m_Layer: 0
-  m_Name: Rune7
+  m_Name: ophiuchus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 699f26a02c4c39e439de640d21eeb8ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d61141f990ff8ac40b3ae55e63ffc631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d61141f990ff8ac40b3ae55e63ffc631,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166184}

@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11460744}
   - 65: {fileID: 6555492}
   m_Layer: 0
-  m_Name: Rune2
+  m_Name: pisces
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166184}
   m_LocalRotation: {x: 0, y: 0, z: 0.9647644, w: 0.2631153}
-  m_LocalPosition: {x: -0.38, y: -0.87, z: 0}
-  m_LocalScale: {x: 0.2031329, y: 0.22539161, z: 1}
+  m_LocalPosition: {x: -1, y: -1.7, z: 0}
+  m_LocalScale: {x: 0.20313287, y: 0.22539157, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 699f26a02c4c39e439de640d21eeb8ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d41a1594daf479e4a9f362bdafa85b85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +126,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d41a1594daf479e4a9f362bdafa85b85,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166184}
