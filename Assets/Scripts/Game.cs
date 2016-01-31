@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TouchScript.Gestures;
 
 public class Game : MonoBehaviour {
     public GameObject Ring1;
@@ -36,33 +37,81 @@ public class Game : MonoBehaviour {
                 Ring2.GetComponent<Ring>().rotationToGo -= Ring2.transform.rotation.eulerAngles.z;
                 Ring3.GetComponent<Ring>().rotationToGo -= Ring3.transform.rotation.eulerAngles.z;
                 Ring4.GetComponent<Ring>().rotationToGo -= Ring4.transform.rotation.eulerAngles.z;
+                for (int i = 0; i < rings.Count; i++)
+                {
+                    for (int k = 0; k < rings[i].transform.childCount; k++)
+                    {
+                        rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
+
+                    }
+                }
+
+
+
 
 
             }
             else if (gameState == 1)
             {
+                for (int k = 0; k < rings[3].transform.childCount; k++)
+                {
+                    rings[3].transform.GetChild(k).GetComponent<TapGesture>().enabled = true;
 
+                }
             }
             else if (gameState == 2)
             {
+                for (int k = 0; k < rings[2].transform.childCount; k++)
+                {
+                    rings[2].transform.GetChild(k).GetComponent<TapGesture>().enabled = true;
 
+                }
             }
             else if (gameState == 3)
             {
+                for (int k = 0; k < rings[1].transform.childCount; k++)
+                {
+                    rings[1].transform.GetChild(k).GetComponent<TapGesture>().enabled = true;
 
+                }
             }
             else if (gameState == 4)
             {
+                for (int k = 0; k < rings[0].transform.childCount; k++)
+                {
+                    rings[0].transform.GetChild(k).GetComponent<TapGesture>().enabled = true;
 
+                }
             }
             else if (gameState == 5)
             {
+                for (int i = 0; i < rings.Count; i++)
+                {
+                    for (int k = 0; k < rings[i].transform.childCount; k++)
+                    {
+                        rings[i].transform.GetChild(k).GetComponent<TapGesture>().enabled = false;
 
+                    }
+                }
             }
         }
         prevState = gameState;
         if (gameState == 0)
         {
+            if(Ring1.transform.rotation.eulerAngles.z == 0)
+            {
+                if (Ring2.transform.rotation.eulerAngles.z == 0)
+                {
+                    if (Ring3.transform.rotation.eulerAngles.z == 0)
+                    {
+                        if (Ring4.transform.rotation.eulerAngles.z == 0)
+                        {
+                            gameState = 1;
+                        }
+                        
+                    }
+                }
+            }
 
 
 

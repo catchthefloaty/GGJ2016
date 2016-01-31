@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ring : MonoBehaviour {
     public float rotationToGo;
-    private float speed = 25;
+    private float speed = 150;
     public float dif;
 
     // Use this for initialization

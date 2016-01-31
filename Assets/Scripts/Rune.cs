@@ -7,7 +7,7 @@ public class Rune : MonoBehaviour {
     public bool affectBefore = false;
     public int beforeDirection = -1;
     public float beforemagnitude = 5;
-    
+    public bool winRune = false;
 
     public bool affectSame = true;
     public int sameDirection = 1;
