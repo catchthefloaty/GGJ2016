@@ -6,10 +6,11 @@ public class Ring : MonoBehaviour {
     public float rotationToGo;
     private float speed = 150;
     public float dif;
+    public AudioSource g ;
 
     // Use this for initialization
     void Start () {
-        
+        g = GameObject.FindGameObjectWithTag("Game").GetComponent<AudioSource>();
     }
 
     
@@ -18,8 +19,11 @@ public class Ring : MonoBehaviour {
     void Update() {
         if (Mathf.Abs((float)rotationToGo) > 0)
         {
-            dif = 0; 
-
+            dif = 0;
+            if (!g.isPlaying)
+            {
+                g.Play();
+            }
             if (rotationToGo > 0) {
                 
                     dif = Time.deltaTime * speed;
