@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationToGo: 0
+  dif: 0
 --- !u!1001 &179939640
 Prefab:
   m_ObjectHideFlags: 0
@@ -481,6 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationToGo: 0
+  dif: 0
 --- !u!1001 &255478966
 Prefab:
   m_ObjectHideFlags: 0
@@ -1073,6 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationToGo: 0
+  dif: 0
 --- !u!1001 &684370478
 Prefab:
   m_ObjectHideFlags: 0
@@ -1689,7 +1692,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905017382}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.378164, w: 0.92573863}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1773,6 +1776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationToGo: 0
+  dif: 0
 --- !u!4 &910546207 stripped
 Transform:
   m_PrefabParentObject: {fileID: 425748, guid: fc1ee28e1dbdf334aa43c1eb3b53ee77, type: 2}
@@ -2635,10 +2639,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f6c6d90773e16b48a1444935d1eefd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableRings: 0
+  off: {r: 0.375, g: 0.375, b: 0.375, a: 1}
+  green: {r: 0.36551726, g: 1, b: 0, a: 1}
+  red: {r: 1, g: 0, b: 0, a: 1}
+  on: {r: 1, g: 1, b: 1, a: 1}
   Ring1: {fileID: 905017382}
   Ring2: {fileID: 672472461}
   Ring3: {fileID: 252594572}
   Ring4: {fileID: 178534240}
+  ringlock1: -90
+  ringlock2: 0
+  ringlock3: 0
+  ringlock4: 270
+  gameState: 0
   rings: []
 --- !u!4 &1330111575
 Transform:
